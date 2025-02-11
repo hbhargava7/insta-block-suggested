@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Hide Posts After Caught Up",
+    "version": "1.0",
+    "description": "Hide all Instagram posts after 'You're all caught up' or 'Suggested Posts' section.",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "host_permissions": ["https://www.instagram.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.instagram.com/*", "https://instagram.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "options_page": "options.html"
+  }
